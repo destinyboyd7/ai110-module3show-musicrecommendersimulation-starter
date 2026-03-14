@@ -29,6 +29,62 @@ Some prompts to answer:
 
 You can include a simple diagram or bullet list if helpful.
 
+I understand real-life recoomendations to work sourcing from indicated likes and dislikes. Forexample many music streaming platforms have a liked songs playlist or a exclude from profile or likes. This will allow the platform to curate the most ideal playlist/recommendations for the user. I would like my user profile to include fave genres as well as genres the user is interested in exploring. Songs will focus on genre, mood, energy, and tempo. The system will make a recoomendation based on how close it is to songs the user already likes and add secondary recoomendation based on what they are interested in hearing more of.
+
+Songs:
+- genre
+- mood
+- tempo
+- energy
+
+Userprofile:
+- favorite genre
+- interested genres
+- favorite mood
+- secondary mood
+- target engery
+- range energy
+
+mermaid.js
+```mermaid
+flowchart LR
+    A[Input: User Prefs]
+    B[Load songs.csv]
+    C[Build Taste Profile]
+    D[Pick One Song from CSV]
+    E[Score Song<br/>genre + mood + energy + tempo + valence + danceability + mode]
+    F{Score passes threshold?}
+    G[Keep Song]
+    H[Drop Song]
+    I[Deduplicate Kept Songs]
+    J[Sort by Score]
+    K[Output: Top K Recommendations]
+
+    A --> C
+    B --> D
+    C --> E
+    D --> E
+    E --> F
+    F -->|Yes| G
+    F -->|No| H
+    G --> I
+    I --> J
+    J --> K
+```
+
+Finalized Algorithm Recipe 
++2.0 for genre match
++1.0 for mood match
++0.0-2.0 for energy match 
++0.0-0.5 for tempo fit
++0.0-0.5 for valence fit
++0.0-0.5 for danceability fit
++0.0-0.5 for mode fit 
+
+Some potential biases that may arises is that the systems recommender puts most of the weight on the following categories: genre, mood, and energy. Then prioritzes tempo, valence, danceability, and mode. 
+
+![alt text](image.png)
+
 ---
 
 ## Getting Started
