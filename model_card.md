@@ -5,7 +5,8 @@
 Give your model a short, descriptive name.  
 Example: **VibeFinder 1.0**  
 
- Model Name: Music Map
+Model Name: Music Map
+
 ---
 
 ## 2. Intended Use  
@@ -36,6 +37,7 @@ Prompts:
 Avoid code here. Pretend you are explaining the idea to a friend who does not program.
 
 My model works by taking the features described in the user prferences and cross reference them with the songs in the dataseet to get the ranking. Genre, mood, energy, tempo, valence, danceability, and mode are features of each song used to rank theme. User preferences consisted on genre, mood, and energy. 
+
 ---
 
 ## 4. Data  
