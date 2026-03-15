@@ -3,7 +3,7 @@ Music Recommender Implementation
 """
 
 import csv
-from typing import List, Dict, Tuple, Optional
+from typing import List, Dict, Tuple
 from dataclasses import dataclass
 
 @dataclass
@@ -150,13 +150,15 @@ def score_song(song: dict, profile: dict):
         genre_points = 0.0
         reasons.append(f"Genre '{song.get('genre', '?')}' does not match '{profile['favorite_genre']}' (+0.0)")
 
-    # Mood (0 or 1.0)
+
     if song.get("mood", "").lower() == profile["favorite_mood"]:
         mood_points = 1.0
         reasons.append(f"Mood matches '{profile['favorite_mood']}' (+1.0)")
     else:
         mood_points = 0.0
         reasons.append(f"Mood '{song.get('mood', '?')}' does not match '{profile['favorite_mood']}' (+0.0)")
+    #mood_points = 0.0
+    #reasons.append("Mood check disabled (+0.0)")
 
     # Energy (0.0 – 2.0)
     song_energy = float(song.get("energy", 0.5))

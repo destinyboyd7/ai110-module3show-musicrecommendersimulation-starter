@@ -84,6 +84,20 @@ Finalized Algorithm Recipe
 Some potential biases that may arises is that the systems recommender puts most of the weight on the following categories: genre, mood, and energy. Then prioritzes tempo, valence, danceability, and mode. 
 
 ![alt text](image.png)
+![phase 4 step 1](image-1.png)
+![phase 4 step 1](image-2.png)
+![phase 4 step 1](image-3.png)
+![phase 4 step 1](image-4.png)
+![phase 4 step 1](image-5.png)
+![phase 4 step 1](image-6.png)
+![phase 4 step 1](image-7.png)
+![phase 4 step 1](image-8.png)
+![phase 4 step 1](image-9.png)
+![phase 4 step 1](image-10.png)
+
+
+
+
 
 ---
 

@@ -1,6 +1,12 @@
+"""
+Unit tests for the Recommender class and its methods.
+"""
 from src.recommender import Song, UserProfile, Recommender
 
 def make_small_recommender() -> Recommender:
+    """
+    Helper function to create a small Recommender instance with test songs.
+    """
     songs = [
         Song(
             id=1,
@@ -31,12 +37,16 @@ def make_small_recommender() -> Recommender:
 
 
 def test_recommend_returns_songs_sorted_by_score():
+    """
+     Test that the recommend method returns songs sorted by their computed score.
+    """
     user = UserProfile(
         favorite_genre="pop",
         favorite_mood="happy",
         target_energy=0.8,
         likes_acoustic=False,
     )
+
     rec = make_small_recommender()
     results = rec.recommend(user, k=2)
 
@@ -47,6 +57,9 @@ def test_recommend_returns_songs_sorted_by_score():
 
 
 def test_explain_recommendation_returns_non_empty_string():
+    """
+    Test that the explain_recommendation method returns a non-empty string.
+    """
     user = UserProfile(
         favorite_genre="pop",
         favorite_mood="happy",
